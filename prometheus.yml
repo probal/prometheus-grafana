@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 30s
+
+scrape_configs:
+  - job_name: 'Monitoring Instance'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['localhost:9990','localhost:9991']
