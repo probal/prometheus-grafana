@@ -7,7 +7,7 @@ networks:
           gateway: 172.22.0.1
 
 version: '3.2'
-services::q
+services:
   prometheus:
     image: prom/prometheus:v2.44.0
     container_name: prometheus
