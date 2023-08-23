@@ -1,8 +1,13 @@
 networks:
   monitoring:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/16
+          gateway: 172.22.0.1
+
 version: '3.2'
-services:
+services::q
   prometheus:
     image: prom/prometheus:v2.44.0
     container_name: prometheus
@@ -26,7 +31,7 @@ services:
     command:
       - '--path.procfs=/host/proc'
       - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
+      - '--path.sysfs=/host/sys'dock
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     ports:
       - 9991:9100
