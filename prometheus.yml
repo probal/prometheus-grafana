@@ -2,7 +2,7 @@ global:
   scrape_interval: 30s
 
 scrape_configs:
-  - job_name: 'Monitoring Instance'
+  - job_name: 'Zaui Monitor'
     scrape_interval: 30s
     static_configs:
-      - targets: ['localhost:9990','localhost:9991']
+      - targets: ['172.22.0.1:9990','172.22.0.1:9991']
